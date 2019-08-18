@@ -1,0 +1,23 @@
+{{!-- Everything inside the #author tags pulls data from the author --}}
+{{#primary_author}}
+
+<section class="author-card">
+    {{#if profile_image}}
+        <img class="author-profile-image" style="border:1px solid #999"  src="{{img_url profile_image size="xs"}}" alt="{{name}}" />
+    {{else}}
+        <span class="avatar-wrapper">{{> "icons/avatar"}}</span>
+    {{/if}}
+    <section class="author-card-content">
+        <h4 class="author-card-name"><a style="font-family:'楷体'" href="{{url}}">{{name}}</a></h4>
+        {{#if bio}}
+            <p>{{bio}}</p>
+        {{else}}
+            <p><a href="{{url}}">阅读更多精彩文章</a></p>
+        {{/if}}
+    </section>
+</section>
+<div class="post-full-footer-right">
+    <a class="author-card-button" href="{{url}}">Read More</a>
+</div>
+
+{{/primary_author}}

@@ -1,0 +1,38 @@
+<div class="floating-header">
+    <div class="floating-header-logo">
+        <a href="{{@site.url}}">
+		
+		
+	
+            {{!--站点图标:未设置图标时，显示头像logo--}}			
+            {{#if @site.icon}}
+				<img src="{{img_url @site.icon size="xxs"}}" alt="{{@site.title}} icon" />
+				{{else}}
+				<img src="{{img_url @site.logo size="xxs"}}" alt="{{@site.title}} icon" />
+            {{/if}}
+			
+			{{!--站点标题--}}
+            <span>{{@site.title}}</span>
+        </a>
+    </div>
+	
+    <span class="floating-header-divider">&mdash;</span>
+	{{!--文章标题--}}
+    <div class="floating-header-title">{{title}}</div>
+	
+	{{!--顶部浮动条右侧分享按钮--}}
+    <div class="floating-header-share">
+	    
+        <div class="floating-header-share-label">Share this {{> "icons/point"}}</div>
+		
+		{{!--分享按钮--}}
+		  <a class="floating-header-share-fb" href="#" onclick="window.open(this.href, 'share-facebook','width=580,height=296');return false;">
+            {{> "icons/website"}}
+          </a>
+    </div>
+    <progress id="reading-progress" class="progress" value="0">
+        <div class="progress-container">
+            <span class="progress-bar"></span>
+        </div>
+    </progress>
+</div>
